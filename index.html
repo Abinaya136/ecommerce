@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AERO - Anti-Gravity E-Commerce</title>
+    <meta name="description" content="Experience the future of shopping with our next-generation anti-gravity e-commerce platform.">
+    <!-- Google Fonts for futuristic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">INITIALIZING SYSTEMS...</div>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="particles-bg" id="particles-bg"></div>
+    <div class="ambient-glow"></div>
+
+    <!-- Controls (Sound, Theme) -->
+    <div class="sys-controls">
+        <button id="theme-toggle" class="control-btn" title="Toggle Neon Theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button id="sound-toggle" class="control-btn" title="Toggle SFX">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">AERO<span class="neon-accent">.99</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="cart-btn" class="cart-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span id="cart-count" class="cart-badge">0</span>
+                </button>
+                <!-- Mobile menu toggle -->
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar glass-panel">
+        <div class="cart-header">
+            <h3>NEXUS CART</h3>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items will be injected here via JS -->
+            <div class="empty-cart-msg">Your cargo bay is empty</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>TOTAL:</span>
+                <span id="cart-total-price" class="neon-text">Cr 0.00</span>
+            </div>
+            <button class="checkout-btn cyber-btn">INITIATE CHECKOUT</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="DEFY GRAVITY.">DEFY GRAVITY.</h1>
+            <h2 class="hero-subtitle">The next-generation space-commerce platform. Equip yourself for 2099.</h2>
+            <button class="cyber-btn primary-btn" onclick="document.getElementById('shop').scrollIntoView({behavior: 'smooth'})">EXPLORE CATALOG</button>
+        </div>
+        <div class="hero-3d-showcase" id="hero-parallax">
+            <div class="floating-card hero-card center-card">
+                <img src="assets/cyber_sneakers.png" alt="Cyber Sneakers">
+                <div class="card-glow"></div>
+            </div>
+            <div class="floating-card hero-card left-card delay-1">
+                <img src="assets/holographic_watch.png" alt="Holo Watch">
+                <div class="card-glow"></div>
+            </div>
+            <div class="floating-card hero-card right-card delay-2">
+                <img src="assets/vr_headset.png" alt="VR Headset">
+                <div class="card-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section section-padding">
+        <h2 class="section-title">SYSTEM_MODULES<span class="neon-accent">_</span></h2>
+        <div class="categories-grid">
+            <div class="category-circle">
+                <div class="circle-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                </div>
+                <span>IMPLANTS</span>
+            </div>
+            <div class="category-circle">
+                <div class="circle-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h4l2.5-7 5 14 2.5-7h6"></path></svg>
+                </div>
+                <span>APPAREL</span>
+            </div>
+            <div class="category-circle active">
+                <div class="circle-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <span>HARDWARE</span>
+            </div>
+            <div class="category-circle">
+                <div class="circle-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <span>CREDITS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="shop" class="shop-section section-padding">
+        <h2 class="section-title">ARMORY_CATALOG<span class="neon-accent">_</span></h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Products injected via JS or static -->
+            <!-- Product 1 -->
+            <div class="product-card glass-panel floating-item" data-id="p1">
+                <div class="hologram-effect"></div>
+                <div class="product-img-wrapper">
+                    <img src="assets/cyber_sneakers.png" alt="AERO Velocity Kicks" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">★★★★★ <span class="rating-count">(9.4k)</span></div>
+                    <h3 class="product-name">AERO Velocity Kicks</h3>
+                    <div class="product-price-row">
+                        <span class="product-price neon-text">Cr 299.99</span>
+                        <button class="add-to-cart-btn" data-id="p1" data-name="AERO Velocity Kicks" data-price="299.99" data-img="assets/cyber_sneakers.png">
+                            ADD +
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card glass-panel floating-item delay-1" data-id="p2">
+                <div class="hologram-effect"></div>
+                <div class="product-img-wrapper">
+                    <img src="assets/holographic_watch.png" alt="Chrono-Sync Nexus" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">★★★★☆ <span class="rating-count">(4.2k)</span></div>
+                    <h3 class="product-name">Chrono-Sync Nexus</h3>
+                    <div class="product-price-row">
+                        <span class="product-price neon-text">Cr 149.00</span>
+                        <button class="add-to-cart-btn" data-id="p2" data-name="Chrono-Sync Nexus" data-price="149.00" data-img="assets/holographic_watch.png">
+                            ADD +
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card glass-panel floating-item delay-2" data-id="p3">
+                <div class="hologram-effect"></div>
+                <div class="product-img-wrapper">
+                    <img src="assets/vr_headset.png" alt="NeuroDive Visor" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">★★★★★ <span class="rating-count">(12k)</span></div>
+                    <h3 class="product-name">NeuroDive Visor</h3>
+                    <div class="product-price-row">
+                        <span class="product-price neon-text">Cr 899.50</span>
+                        <button class="add-to-cart-btn" data-id="p3" data-name="NeuroDive Visor" data-price="899.50" data-img="assets/vr_headset.png">
+                            ADD +
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card glass-panel floating-item delay-1" data-id="p4">
+                <div class="hologram-effect"></div>
+                <div class="product-img-wrapper">
+                    <img src="assets/neon_jacket.png" alt="Exo-Weave Jacket" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">★★★★☆ <span class="rating-count">(3.1k)</span></div>
+                    <h3 class="product-name">Exo-Weave Jacket</h3>
+                    <div class="product-price-row">
+                        <span class="product-price neon-text">Cr 450.00</span>
+                        <button class="add-to-cart-btn" data-id="p4" data-name="Exo-Weave Jacket" data-price="450.00" data-img="assets/neon_jacket.png">
+                            ADD +
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card glass-panel floating-item" data-id="p5">
+                <div class="hologram-effect"></div>
+                <div class="product-img-wrapper">
+                    <img src="assets/hover_board.png" alt="Grav-Drifter Board" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">★★★★★ <span class="rating-count">(8.8k)</span></div>
+                    <h3 class="product-name">Grav-Drifter Board</h3>
+                    <div class="product-price-row">
+                        <span class="product-price neon-text">Cr 1200.00</span>
+                        <button class="add-to-cart-btn" data-id="p5" data-name="Grav-Drifter Board" data-price="1200.00" data-img="assets/hover_board.png">
+                            ADD +
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-card glass-panel floating-item delay-2" data-id="p6">
+                <div class="hologram-effect"></div>
+                <div class="product-img-wrapper">
+                    <img src="assets/energy_drink.png" alt="Quantum Fizz" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">★★★★☆ <span class="rating-count">(21k)</span></div>
+                    <h3 class="product-name">Quantum Fizz Elixir</h3>
+                    <div class="product-price-row">
+                        <span class="product-price neon-text">Cr 15.99</span>
+                        <button class="add-to-cart-btn" data-id="p6" data-name="Quantum Fizz Elixir" data-price="15.99" data-img="assets/energy_drink.png">
+                            ADD +
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section section-padding">
+        <div class="features-grid">
+            <div class="feature-card glass-panel reveal-on-scroll">
+                <div class="feature-icon neon-glow-cyan">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <h3>FTL Delivery</h3>
+                <p>Near-instant teleportation of goods directly to your coordinates.</p>
+            </div>
+            <div class="feature-card glass-panel reveal-on-scroll delay-1">
+                <div class="feature-icon neon-glow-magenta">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                </div>
+                <h3>AI Oracle</h3>
+                <p>Predictive algorithmic shopping tailored to your neuro-profile.</p>
+            </div>
+            <div class="feature-card glass-panel reveal-on-scroll delay-2">
+                <div class="feature-icon neon-glow-purple">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h3>Quantum Secure</h3>
+                <p>Unhackable transaction encryption secured by entangled nodes.</p>
+            </div>
+            <div class="feature-card glass-panel reveal-on-scroll delay-3">
+                <div class="feature-icon neon-glow-blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <h3>Space-Age Packaging</h3>
+                <p>Zero-G containment fields protect your items during transit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Floating Button -->
+    <div class="ai-assistant-btn" id="ai-assistant" title="Chat with Oracle AI">
+        <div class="pulse-ring"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a2 2 0 0 1 2 2c0 1.1-.9 2-2 2s-2-.9-2-2a2 2 0 0 1 2-2zM12 8c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zM2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12z"></path></svg>
+    </div>
+
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-logo">AERO<span class="neon-accent">.99</span></h3>
+                <p>Forging the future of commerce in the cosmos. Elevate your existence.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    <a href="#" class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#" class="social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>DATA_LINKS</h4>
+                <ul>
+                    <li><a href="#">Command Center</a></li>
+                    <li><a href="#">Sector Map</a></li>
+                    <li><a href="#">Transmissions</a></li>
+                    <li><a href="#">Protocol</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="#">Diagnostics</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Encryption</a></li>
+                    <li><a href="#">Comm-Link</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUBSCRIBE</h4>
+                <p>Join the neural network for updates.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="ENTER COMM_ID" required>
+                    <button type="submit" class="cyber-btn sm">SYNC</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2099 AERO Corporation. All vectors secured.</p>
+        </div>
+    </footer>
+
+    <!-- Audio for sound effects (placeholders) -->
+    <audio id="sfx-hover" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA="></audio>
+    <audio id="sfx-click" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA="></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
